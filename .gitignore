@@ -1,0 +1,4 @@
+# Ignore below files while pushing to git
+/node_modules
+package-lock.json
+.vscode

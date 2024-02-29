@@ -1,0 +1,15 @@
+{
+  "HTTP": {
+    "PORT": 8080,
+    "TIMEOUT": 1000,
+    "ENV": "LOCAL"
+  },
+  "APP": {
+    "prefix": "/nj-project"
+  },
+  "JWT_TOKEN": {
+    "EXPIRY_TIME": "3h",
+    "EXPIRY_TIME_IN_SECONDS": 10800,
+    "ALGORITHM": "RS256"
+  }
+}
