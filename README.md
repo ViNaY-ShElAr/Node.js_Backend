@@ -1,2 +1,2 @@
 # Introduction 
-Created a project using Nodejs, Mongodb, Redis & Socket
+Created a project using Nodejs, Mongodb, Redis
