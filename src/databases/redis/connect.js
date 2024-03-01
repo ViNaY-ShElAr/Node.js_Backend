@@ -6,7 +6,7 @@ class Redis {
 
 	async connectDB() {
 		return new Promise((resolve, reject) => {
-			const redisUri = process.env.PROJECT_REDIS_URI;
+			const redisUri = process.env.NJ_PROJECT_REDIS_URI;
 			const redisClient = new redis(redisUri);
 
 			redisClient.on("connect", () => {

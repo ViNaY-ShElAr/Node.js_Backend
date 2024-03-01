@@ -7,7 +7,7 @@ class MongoDB {
 
 	async connectDB() {
 		try {
-			const mongoUri = process.env.PROJECT_MONGO_URI;
+			const mongoUri = process.env.NJ_PROJECT_MONGO_URI;
 			const mongoClient = await mongoose.connect(mongoUri);
 
 			// registar models

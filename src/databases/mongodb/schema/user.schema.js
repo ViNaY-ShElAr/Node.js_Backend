@@ -17,7 +17,8 @@ class UserSchema {
         this.Schema = new mongoose.Schema(
             {
                 userName: {
-                    type: String
+                    type: String,
+                    required: true
                 },
                 emailId: {
                     type: String,
@@ -26,6 +27,11 @@ class UserSchema {
                 },
                 contactNo: {
                     type: String
+                },
+                gender: {
+                    type: String,
+                    required: true ,
+                    enum: ["male", "female", "trans"]
                 },
                 password: {
                     type: String,

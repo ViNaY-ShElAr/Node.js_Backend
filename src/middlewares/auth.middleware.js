@@ -35,7 +35,7 @@ auth = async (req, res, next) => {
 
     } catch (error) {
         // Handle jwt error separately
-        if (error.message == 'invalid signature') {
+        if (error.message == 'invalid signature' || error.message == 'jwt expired') {
             res.locals.httpStatusCode = RESPONSE_CONSTANTS.GENERAL.UNAUTHORIZED.HTTP_STATUS
             res.locals.message = RESPONSE_CONSTANTS.GENERAL.UNAUTHORIZED.MESSAGE
         } else {

@@ -55,6 +55,12 @@ const RESPONSE_CONSTANTS = {
             MESSAGE: "Invalid Credentials"
         }
     },
+    LOGOUT: {
+        LOGOUT_SUCESS: {
+            HTTP_STATUS: StatusCodes.OK,
+            MESSAGE: "User Successfully Logged Out",
+        }
+    },
     HOME: {
         SUCESS: {
             HTTP_STATUS: StatusCodes.OK,

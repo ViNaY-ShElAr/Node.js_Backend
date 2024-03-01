@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const compression = require('compression');
 const helmet = require("helmet");
+require('dotenv').config();
 
 const CONFIG = require('../config/config.js');
 const databases = require('./helper/initDatabases.js');
@@ -81,8 +82,8 @@ class App {
 
     #startServer() {
         logger.info('Starting Server');
-        this.httpServer.listen(CONFIG.HTTP.PORT, () => {
-            logger.info(`Server started on port ${CONFIG.HTTP.PORT}`);
+        this.httpServer.listen(process.env.PORT, () => {
+            logger.info(`Server started on port ${process.env.PORT}`);
         });
     }
 }

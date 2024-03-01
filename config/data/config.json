@@ -1,6 +1,5 @@
 {
   "HTTP": {
-    "PORT": 8080,
     "TIMEOUT": 1000,
     "ENV": "LOCAL"
   },

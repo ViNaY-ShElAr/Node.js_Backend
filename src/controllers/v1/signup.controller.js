@@ -26,6 +26,7 @@ class SignupController {
       const userName = req.body.userName;
       const emailId = req.body.emailId.toLowerCase();
       const contactNo = req.body.contactNo;
+      const gender = req.body.gender;
       let password = req.body.password;
       const role = 2
 
@@ -42,7 +43,7 @@ class SignupController {
       password = await bcrypt.hash(password, salt);
 
       // Save user data in database
-      const savedUserData = await this.userOperations.createUser({ userName, emailId, contactNo, password, role })
+      const savedUserData = await this.userOperations.createUser({ userName, emailId, contactNo, gender, password, role })
 
       // Create JWT token 
       const tokenData = {

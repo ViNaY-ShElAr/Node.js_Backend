@@ -4,6 +4,7 @@ const createError = require('http-errors');
 const responseHandler = require('../../middlewares/responseHandler.middleware');
 const signupRoute = require('./signup.route.js');
 const loginRoute = require('./login.route.js');
+const logoutRoute = require('./logout.route.js');
 const homeRoute = require('./home.route.js');
 
 class IndexRouter {
@@ -18,6 +19,7 @@ class IndexRouter {
     #handleRoutes() {
         this.router.use('/signup', signupRoute);
         this.router.use('/login', loginRoute);
+        this.router.use('/logout', logoutRoute);
         this.router.use('/home', homeRoute);
 
         this.router.get('/health', (req, res) => res.json({
