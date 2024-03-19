@@ -70,7 +70,7 @@ class App {
 
     #handleRoutes() {
         logger.info('Configuring Routes');
-        this.app.use(`${CONFIG.APP.prefix}/api/v1`, require('./routes/v1/index.route.js'));
+        this.app.use(`${CONFIG.APP.PREFIX}/api/v1`, require('./routes/v1/index.route.js'));
         logger.info('Routes configured');
     }
 
