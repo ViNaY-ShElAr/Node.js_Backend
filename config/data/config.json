@@ -4,7 +4,7 @@
     "ENV": "LOCAL"
   },
   "APP": {
-    "prefix": "/nj-project"
+    "PREFIX": "/nj-project"
   },
   "JWT_TOKEN": {
     "EXPIRY_TIME": "3h",
