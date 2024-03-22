@@ -1,7 +1,6 @@
 {
   "HTTP": {
-    "TIMEOUT": 1000,
-    "ENV": "LOCAL"
+    "TIMEOUT": 1000
   },
   "APP": {
     "PREFIX": "/nj-project"

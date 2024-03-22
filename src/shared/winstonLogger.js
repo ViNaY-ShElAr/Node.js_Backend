@@ -2,7 +2,7 @@
 const winston = require('winston');
 const morgan = require('morgan');
 const config = require('../../config/config');
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.ENV || 'development';
 const serviceName = 'NJ_PROJECT';
 
 class CxLogger {
