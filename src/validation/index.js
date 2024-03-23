@@ -1,4 +1,5 @@
 const { logger } = require('../shared/winstonLogger');
+const {RESPONSE_CONSTANTS} = require('../constants/constant')
 
 class Validation {
 
@@ -16,9 +17,9 @@ class Validation {
                 loggerInfo.error = error.stack;
                 logger.error(error.message, loggerInfo);
 
-                return res.status(400).send({
-                    status_code: 400,
-                    message: "Invalid Input",
+                return res.status(RESPONSE_CONSTANTS.GENERAL.BAD_REQUEST.HTTP_STATUS).send({
+                    status_code: RESPONSE_CONSTANTS.GENERAL.BAD_REQUEST.HTTP_STATUS,
+                    message: RESPONSE_CONSTANTS.GENERAL.BAD_REQUEST.MESSAGE,
                     error: error.message
                 })
             }
