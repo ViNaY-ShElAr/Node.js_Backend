@@ -25,11 +25,11 @@ class LoginController {
             const emailId = req.body.emailId.toLowerCase();
             let password = req.body.password;
 
-            // Check if user already registered
+            // Check if user exist in database or not
             const userData = await this.userOperations.getUserInfoByEmailId(emailId);
             if (!userData) {
-                res.locals.httpStatusCode = RESPONSE_CONSTANTS.SIGNUP.ALREADY_SIGNUP.HTTP_STATUS;
-                res.locals.message = RESPONSE_CONSTANTS.SIGNUP.ALREADY_SIGNUP.MESSAGE;
+                res.locals.httpStatusCode = RESPONSE_CONSTANTS.LOGIN.USER_NOT_EXIST.HTTP_STATUS;
+                res.locals.message = RESPONSE_CONSTANTS.LOGIN.USER_NOT_EXIST.MESSAGE;
                 return responseHandler(req, res);
             }
 
