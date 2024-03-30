@@ -11,7 +11,8 @@ class LogoutController {
 
     logoutUser = async (req, res) => {
         const loggerInfo = {
-            identifier: req.id
+            identifier: req.id,
+            requestedBy: req.accessToken
         };
         logger.info('Logout User', loggerInfo);
         try {
