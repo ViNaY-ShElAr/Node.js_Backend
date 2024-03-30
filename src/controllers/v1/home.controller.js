@@ -10,7 +10,8 @@ class homeController {
 
     getHomePage = async (req, res) => {
         const loggerInfo = {
-            identifier: req.id
+            identifier: req.id,
+            requestedBy: req.accessToken
         };
         logger.info('Get Home Page', loggerInfo);
         try {
