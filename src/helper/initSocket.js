@@ -28,18 +28,24 @@ class Socket {
     }
 
     #handleEvents() {
-        this.#io.on('connection', (socket) => {
-            console.log('A user connected');
+        // Implement socket middleware
+        this.#io.use(async (socket, next) => {
 
-            socket.on('disconnect', () => {
-                console.log('User disconnected');
-            });
+            console.log('Socket in middleware');
+            next();
+        })
+            .on('connection', (socket) => {
+                console.log('A user connected');
 
-            socket.on('chat message', (msg) => {
-                console.log('message: ' + msg);
-                this.#io.emit('chat message', msg);
+                socket.on('disconnect', () => {
+                    console.log('User disconnected');
+                });
+
+                socket.on('chat message', (msg) => {
+                    console.log('message: ' + msg);
+                    this.#io.emit('chat message', msg);
+                });
             });
-        });
     }
 }
 

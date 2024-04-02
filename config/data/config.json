@@ -9,5 +9,9 @@
     "EXPIRY_TIME": "3h",
     "EXPIRY_TIME_IN_SECONDS": 10800,
     "ALGORITHM": "RS256"
+  },
+  "FILES": {
+    "MOUNT_POINT": "Downloads",
+    "BLANK_PROFILE_PIC": "/home/vinay/Desktop/Projects/Node/NJ_PROJECT/Downloads/Profile/blank-profile-picture.png"
   }
 }

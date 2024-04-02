@@ -35,7 +35,12 @@ class CxLogger {
         });
         morgan.token('params', (req, res) => JSON.stringify(req.params));
         morgan.token('query', (req, res) => JSON.stringify(req.query));
-        morgan.token('headers', (req, res) => JSON.stringify(req.headers));
+        morgan.token('headers', (req, res) => {
+            // Exclude 'token' from headers
+            const filteredHeaders = { ...req.headers };
+            delete filteredHeaders['x-access-token'];
+            return JSON.stringify(filteredHeaders);
+        });
         morgan.token('rqId', (req, res) => req.id);
         morgan.token('service', (req, res) => serviceName);
         morgan.token('env', (req, res) => env);

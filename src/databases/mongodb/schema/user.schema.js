@@ -37,6 +37,10 @@ class UserSchema {
                     type: String,
                     required: true
                 },
+                profilePic: {
+                    type: String,
+                    required: true
+                },
                 role: {
                     type: Number
                 }

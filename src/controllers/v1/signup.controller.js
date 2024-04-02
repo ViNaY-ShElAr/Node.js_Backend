@@ -28,7 +28,10 @@ class SignupController {
       const contactNo = req.body.contactNo;
       const gender = req.body.gender;
       let password = req.body.password;
-      const role = 2
+      const role = 2;
+
+      const files = req.files;
+      const profilePic = files[0].path;
 
       // Check if user already registered
       const isUserExistInDb = await this.userOperations.getUserInfoByEmailId(emailId);
@@ -43,7 +46,7 @@ class SignupController {
       password = await bcrypt.hash(password, salt);
 
       // Save user data in database
-      const savedUserData = await this.userOperations.createUser({ userName, emailId, contactNo, gender, password, role })
+      const savedUserData = await this.userOperations.createUser({ userName, emailId, contactNo, gender, password, profilePic, role })
 
       // Create JWT token 
       const tokenData = {
