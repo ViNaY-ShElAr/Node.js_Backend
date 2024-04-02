@@ -44,6 +44,7 @@ class CxLogger {
         morgan.token('rqId', (req, res) => req.id);
         morgan.token('service', (req, res) => serviceName);
         morgan.token('env', (req, res) => env);
+        morgan.token('ip', (req, res) => req.ip);
 
         return function (options = { body: true }) {
             return morgan((tokens, req, res) => {
@@ -51,6 +52,7 @@ class CxLogger {
                     return;
                 }
                 const morganOptions = {
+                    ip: tokens.ip(req, res),
                     url: tokens.url(req, res),
                     method: tokens.method(req, res),
                     code: Number(tokens.status(req, res)),
